@@ -28,5 +28,11 @@ namespace Lab03_View.Controllers
             Book model = book.getBookById(id);
             return View(model);
         }
+        //Bài 3 : Gọi PartialView thông qua jQueryy ajax có gửi kèm dữ liệu từ model
+        public PartialViewResult PopularBook()
+        {
+            var books = book.getBookList();
+            return PartialView(books);
+        }
     }
 }
